@@ -14,13 +14,12 @@ public class Main {
     //initializing of an array list of transaction objects
     static ArrayList<Transaction> ledger;
     //csv path
-    static final String csvFileName = "./src/main/resources/transaction.csv";
+
 
     public static void main(String[] args) throws IOException {
-        ledger = new ArrayList<>();
 
         try {
-            loadTransactions();
+           ledger = FileManager.loadTransactions();
         } catch (Exception exo) {
             System.out.println(exo.getLocalizedMessage());
         }
@@ -95,7 +94,7 @@ public class Main {
         System.out.println("Awesome your deposit was " + deposit + ".");
 
 
-        saveTransactionToFile(deposit);
+
     }
     private static void makePayment() {
         System.out.println("How much would you like to pay? ");
@@ -120,7 +119,7 @@ public class Main {
         System.out.println("Your payment was successful. ");
 
         // Save payment to the file
-        saveTransactionToFile(paymentTransaction);
+        FileManager.saveTransactionToFile(paymentTransaction);
 
 
     }
@@ -180,35 +179,6 @@ public class Main {
         System.out.println("======= All Transactions =======");
         for (Transaction transaction : ledger) {
             System.out.println(transaction);
-        }
-    }
-
-    //helper method to help us write t0 the csv file
-    //aka to save a transaction
-    static void saveTransactionToFile(Transaction transaction) {
-        StringBuilder sb = new StringBuilder();
-
-        try (FileWriter fw = new FileWriter(csvFileName, true)) {
-            // Creating a string for the transaction details to save in the CSV file
-            sb.append(transaction.getDate().toString());
-            sb.append("|");
-            sb.append(transaction.getTime().toString());
-            sb.append("|");
-            sb.append(transaction.getDescription());
-            sb.append("|");
-            sb.append(transaction.getVendor());
-            sb.append("|");
-            sb.append(transaction.getAmount());
-
-            String newEntry = sb.toString();
-            fw.write(newEntry);
-            fw.write("\n");
-            // fw.close();
-
-            ledger.add(transaction);
-        } catch (Exception ioExp) {
-            ioExp.getLocalizedMessage();
-            System.out.println("Error");
         }
     }
     public static void showDeposits() {
