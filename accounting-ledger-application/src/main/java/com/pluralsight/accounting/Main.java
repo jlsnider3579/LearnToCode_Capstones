@@ -93,6 +93,8 @@ public class Main {
 
         System.out.println("Awesome your deposit was " + deposit + ".");
 
+        FileManager.saveTransactionToFile(deposit);
+
 
 
     }
