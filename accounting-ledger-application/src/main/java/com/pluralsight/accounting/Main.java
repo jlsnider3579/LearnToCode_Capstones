@@ -36,8 +36,8 @@ public class Main {
             System.out.println("\n======= Home Screen ======= ");
             System.out.println();
             System.out.println("""
-                    (D) add deposit
-                    (p) make payment
+                    (D) Add deposit
+                    (p) Make payment
                     (L) Ledger
                     (X) Exit
                     """);
