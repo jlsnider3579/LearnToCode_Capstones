@@ -1,0 +1,22 @@
+@startuml
+class com.pluralsight.accounting.Transaction {
+- LocalDate date
+- LocalTime time
+- String description
+- String vendor
+- double amount
++ LocalDate getDate()
++ void setDate(LocalDate)
++ LocalTime getTime()
++ void setTime(LocalTime)
++ String getDescription()
++ void setDescription(String)
++ String getVendor()
++ void setVendor(String)
++ double getAmount()
++ void setAmount(double)
++ String toString()
+}
+
+
+@enduml
