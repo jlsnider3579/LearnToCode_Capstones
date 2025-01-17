@@ -36,8 +36,8 @@ public class Main {
             System.out.println("\n======= Home Screen ======= ");
             System.out.println();
             System.out.println("""
-                    (D) Add deposit
-                    (p) Make payment
+                    (D) add deposit
+                    (p) make payment
                     (L) Ledger
                     (X) Exit
                     """);
@@ -69,6 +69,33 @@ public class Main {
                     System.out.println("Invalid option choose on of the following D, P, L,X");
                     break;
             }
+        }
+    }
+
+    // Reads from transaction csv and stores it inside ledger
+    private static void loadTransactions() throws IOException {
+        //File reader is reading the transaction.csv file
+        FileReader fileReader = new FileReader(csvFileName);
+
+        //Buffer reader is reading and storing data from the file reader
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        //Reading the first line of the transaction.csv but not saving it
+        String fileInput = bufferedReader.readLine();
+
+
+        // reads and goes through the transaction csv until there is nothing left
+        while ((fileInput = bufferedReader.readLine()) != null) {
+
+            // Split the line using the pipe
+            String[] split = fileInput.split("\\|");
+
+            System.out.println(split.length);
+
+
+            // Create a new Transaction object by parsing the relevant values from the 'split' array
+            Transaction transaction = new Transaction(LocalDate.parse(split[0]), LocalTime.parse(split[1]), split[2], split[3], Double.parseDouble(split[4]));
+            ledger.add(transaction);
         }
     }
     private static void makeDeposit() {
