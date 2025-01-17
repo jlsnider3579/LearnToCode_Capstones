@@ -1,80 +1,84 @@
-# Accounting Ledger Application
+# Accounting Application 📊
 
-This Accounting Ledger application is designed to manage and track financial transactions such as deposits and payments. Users can interact with the application via a command-line interface (CLI), where they can view their transaction history, make deposits, payments, and generate various financial reports. Transactions are stored in a CSV file for persistence.
-
-
-
-## Features
-
-* Add Deposits: Allows users to record deposits to their account.
-
-* Make Payments: Allows users to record payments made from their account.
-
-* View Ledger: Displays all transactions, categorized by deposits, payments, or full transaction history.
-
-* Generate Reports: Provides options to generate:
-
-* Month-to-date transactions
-
-* Previous month transactions
-
-* Year-to-date transactions
-
-* Previous year transactions
-
-* Search transactions by vendor
-
-* Data Persistence: All transactions are stored in a CSV file for easy retrieval and modification.
+![UML](src/uml.png)
 
 
-
-### Usage
-
-When you run the application, you will be presented with a home screen offering various options:
-
-* D - Add a deposit
-* P - Make a payment
-* L - View ledger (transactions)
-* X - Exit the application
-
-
-
-#### Example: Adding a Deposit
-
-* Select D from the home screen.
-
-* Enter the amount, payee, and description for the deposit.
-
-* The transaction will be saved and added to the ledger.
+## Table of Contents 📚
+- [Overview 📝](#overview-)
+- [Features ✨](#features-)
+- [Class Structure 🏗️](#class-structure-)
+    - [Main 🚀](#1-main-)
+    - [FileManager 📁](#2-filemanager-)
+    - [Transaction 💳](#3-transaction-)
+    - [UserInterface 🖱️](#4-userinterface-)
+    - [Utilities 🔧](#5-utilities-)
+- [How to Run the Application ▶️](#how-to-run-the-application-)
+- [Interesting Code](#interesting-code)
 
 
+## Overview 
+This project is an accounting application designed to help users manage financial transactions. It allows users to:
+- Add deposits ➕
+- Make payments ➖
+- View a ledger of all transactions 
+- Generate reports 📈
 
-##### Example: Viewing Ledger
+The application is built using Java and includes functionality for saving and loading transactions from a CSV file.
 
-* Select L from the home screen.
+## Features ✨
+1. **Transaction Management**
+    - Add deposits and payments.
+    - Save transactions to a file for persistent storage.
+    - View all transactions, deposits, or payments.
 
-* Choose from options like A (All Entries), D (Deposits), P (Payments), or R (Reports).
+2. **Reports** 📊
+    - Generate reports such as:
+        - Month-to-date 📅
+        - Previous month 📆
+        - Year-to-date 📅
+        - Previous year 📆
+        - Search by vendor 🔍
 
-* You can also generate reports for specific date ranges or search by vendor.
+3. **File Management** 📂
+    - Load transactions from a CSV file.
+    - Save new transactions to the file.
+
+4. **User Interface** 🖥️
+    - Interactive command-line interface for navigating the application.
+
+## Class Structure 🏗️
+### 1. `Main` 🚀
+The entry point of the application, responsible for initializing the ledger and launching the user interface.
+
+### 2. `FileManager` 📁
+Handles reading from and writing to the CSV file that stores transaction data.
+
+### 3. `Transaction` 💳
+Represents a financial transaction with details such as:
+- Date 📅
+- Time ⏰
+- Description 📝
+- Vendor 🏢
+- Amount 💲
+
+### 4. `UserInterface` 🖱️
+Manages the user interactions through a menu-driven command-line interface.
+
+### 5. `Utilities` 🔧
+Provides helper methods for transaction-related operations, such as:
+- Making deposits ➕
+- Making payments ➖
+- Viewing transactions 📒
+- Generating reports 📈
+
+## How to Run the Application ▶️
+1. Clone the repository to your local machine.
+2. Open the project in your preferred Java IDE.
+3. Ensure that the `transaction.csv` file is present in the `src/main/resources` directory.
+4. Run the `Main` class to start the application.
 
 
-
-
-##### CSV Format
-
-* The application reads and writes transactions to a CSV file (transaction.csv). Each transaction is stored in the following format:
-
-* Date: The date of the transaction in YYYY-MM-DD format.
-
-* Time: The time of the transaction in HH:MM:SS format.
-
-* Description: A brief description of the transaction.
-
-* Vendor: The payee or vendor associated with the transaction.
-
-Amount: The transaction amount (positive for deposits, negative for payments).
-
-###### Interesting code
+## Interesting code
 
 ![Screenshot 2024-10-18 084800](https://github.com/user-attachments/assets/d94eb4b1-7376-4232-af6c-86ccccb84ae3)
 
@@ -90,10 +94,7 @@ The switch statement checks the user's choice and performs different actions bas
 ![Screenshot 2024-10-18 121014](https://github.com/user-attachments/assets/cfb318e4-29b9-4263-8792-4ea1c6e9d594)
 
 
-<video width="600" controls>
-  <source src="file:///C:/path/to/your/video/LTCA.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
 
 
 

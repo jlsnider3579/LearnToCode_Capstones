@@ -1,0 +1,55 @@
+@startuml
+class com.pluralsight.accounting.Main {
+~ {static} ArrayList<Transaction> ledger
++ {static} void main(String[])
+- {static} void reports()
++ {static} void monthToDate()
++ {static} void prevMonth()
++ {static} void yearToDate()
++ {static} void prevYear()
++ {static} void vendorSearch()
+}
+
+
+class com.pluralsight.accounting.FileManager {
+~ {static} String csvFileName
++ {static} ArrayList<Transaction> loadTransactions()
++ {static} void saveTransactionToFile(Transaction)
+}
+
+
+class com.pluralsight.accounting.UserInterface {
++ void ShowHomeScreen()
+- {static} void Ledger()
+}
+
+class com.pluralsight.accounting.Utilities {
++ {static} void makeDeposit()
++ {static} void makePayment()
++ {static} void viewAllTransactions()
++ {static} void showDeposits()
++ {static} void showPayments()
++ {static} void reports()
+}
+
+class com.pluralsight.accounting.Transaction {
+- LocalDate date
+- LocalTime time
+- String description
+- String vendor
+- double amount
++ LocalDate getDate()
++ void setDate(LocalDate)
++ LocalTime getTime()
++ void setTime(LocalTime)
++ String getDescription()
++ void setDescription(String)
++ String getVendor()
++ void setVendor(String)
++ double getAmount()
++ void setAmount(double)
++ String toString()
+}
+
+
+@enduml
