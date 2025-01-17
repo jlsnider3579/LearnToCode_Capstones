@@ -88,5 +88,6 @@ import java.util.Scanner;
             System.out.println("Generating reports...");
             // Add report generation logic here
         }
+
     }
 

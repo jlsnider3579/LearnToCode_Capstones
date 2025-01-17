@@ -134,7 +134,7 @@ public class Main {
 
         System.out.println(" previous year " + formattedStartOfPrevYear + " to " + formattedEndOfYear);
         for (Transaction transaction : ledger) {
-            if (transaction.getDate().getYear() - 1 == prevYear) ;
+            if (transaction.getDate().getYear() - 1 == prevYear);
             System.out.println(transaction);
         }
     }
