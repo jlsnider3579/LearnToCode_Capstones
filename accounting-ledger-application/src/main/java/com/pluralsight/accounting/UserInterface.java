@@ -24,12 +24,13 @@ public class UserInterface {
                 case "D":
                     System.out.println("Enter a deposit ");
                     // method for a deposit
-                    makeDeposit();
+                    Utilities.makeDeposit();
+
                     break;
                 case "P":
                     System.out.println("Make payment ");
                     //method for a payment
-                    makePayment();
+                    Utilities.makePayment();
                     break;
                 case "L":
                     System.out.println("\n======= Ledger =======");
@@ -70,23 +71,23 @@ public class UserInterface {
             switch (option) {
                 case "A":
                     System.out.println("show all entries");
-                    viewAllTransactions();
+                    Utilities.viewAllTransactions();
                     //method for all entries
                     break;
                 case "D":
                     System.out.println("Showing all deposits");
                     //method for deposits
-                    showDeposits();
+                    Utilities.showDeposits();
                     break;
                 case "P":
                     System.out.println("Showing all payments");
                     //method for payments
-                    showPayments();
+                    Utilities.showPayments();
                     break;
                 case "R":
                     System.out.println("\n======= Reports =======");
                     System.out.println();
-                    reports();
+                    Utilities.reports();
                     break;
                 case "H":
                     System.out.println("Returning home");
