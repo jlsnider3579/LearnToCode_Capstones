@@ -26,6 +26,9 @@ public class Main {
 
         System.out.println(ledger);
 
+        UserInterface uI = new UserInterface();
+        uI.ShowHomeScreen();
+
     }
     private static void reports() {
         System.out.println("Choose a report to display");
